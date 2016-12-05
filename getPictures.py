@@ -3,6 +3,9 @@ import os
 import random
 from PIL import Image
 import time
+import subprocess
+
+import webbrowser
 
 
 photos = []
@@ -12,7 +15,7 @@ for dirname, dirnames, filenames in os.walk(path):
     # print path to all filenames.
     for filename in filenames:
     	if(filename.lower().endswith(('.png', '.jpg', '.jpeg'))):
-        	photos.append(path + '\\' + filename)
+        	photos.append(path + '/' + filename)
         #print(os.path.join(dirname, filename))
 
 if not photos:
@@ -22,10 +25,13 @@ if not photos:
 if(shuffle == True):
 	random.shuffle(photos)
 
-
 for i in range(0, len(photos)):
-	im = Image.open(photos[i])
-	im.show()
-	time.sleep(float(timeDelay))
+    process = subprocess.Popen(["chromium-browser", photos[i]])
+    time.sleep(float(timeDelay))
+    process.kill()
+
+    #webbrowser.open(photos[i])
+    #time.sleep(float(timeDelay))
+    #webbrowser.close()
 #do something about time delay
 #for photo in photos:
