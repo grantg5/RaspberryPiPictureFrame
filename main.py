@@ -3,7 +3,7 @@ import random
 
 #Main method this will handle the user prompts and have things go to where they are suppose to
 path = input("Provide the path to your pictures: ")
-timeDelay = input("Provide the time delay you want on each picture in seconds
+timeDelay = input("Provide the time delay you want on each picture in seconds: ")
 
 #check if the value given was a time
 try:

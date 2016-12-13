@@ -5,7 +5,7 @@ from PIL import Image
 import time
 import subprocess
 import webbrowser
-import hardwaretiming
+"""import hardwaretiming"""
 
 photos = []
 
